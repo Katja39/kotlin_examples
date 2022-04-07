@@ -17,26 +17,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.calculateButton.setOnClickListener{ calculateTip() }
     }
-    // Better way with view binding
-    //  val myButton: Button = binding.myButton
-    //myButton.text = "A button"
 
-    // Best way with view binding and no extra variable
-    //binding.myButton.text = "A button"
-
-
-    fun calculateTip() {
+    private fun calculateTip() {
         val stringInTextField = binding.costOfService.text.toString()
         val cost = stringInTextField.toDouble()
-        val selectedID = binding.tipOptions.checkedRadioButtonId
-        val tipPercentage = when (selectedID){
+        val tipPercentage = when (binding.tipOptions.checkedRadioButtonId){
             R.id.option_amazing_percent -> 0.20
             R.id.option_good_percent -> 0.18
             else -> 0.15
         }
         var tip = tipPercentage * cost
         val roundUp = binding.roundUpSwitch.isChecked
-        if(roundUp==true){
+        if(roundUp){
             tip = kotlin.math.ceil(tip)
         }
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
