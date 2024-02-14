@@ -1,3 +1,2 @@
-# Kotlin-examples
-Kotlin examples to practice for the "Programming mobile devices" module.
-The kotlin tutorial from Android Studio was used.
+# Kotlin-exercises
+Kotlin exercises for the 'Programming Mobile Devices' module. The Kotlin tutorial from Android Studio was used.
